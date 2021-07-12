@@ -7,9 +7,7 @@ import Navbar from "./NavBar/Navbar";
 
 
 const useStyles = makeStyles({
-    MainStyles: {
-        padding: 0,
-    },
+
     menu: {
         position: "fixed",
         top: "30px",
@@ -23,7 +21,7 @@ function MainPage() {
     const classes = useStyles()
 
     return (
-        <Container maxWidth={"xl"}  className={classes.MainStyles}>
+        <Container maxWidth={"lg"}>
             <Navbar/>
             <Slider/>
             <AboutUs/>
