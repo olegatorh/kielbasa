@@ -18,7 +18,7 @@ export default function Slider() {
     const classes = useStyles();
 
     return (
-        <Carousel>
+        <Carousel >
             <Carousel.Item interval={2000}>
                 <img src={newSlider} alt=""  className={classes.slider} />
             </Carousel.Item>
