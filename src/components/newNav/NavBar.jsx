@@ -7,9 +7,13 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
+
+import burger from "../../media/menu.png"
+
+
 const useStyles = makeStyles({
     list: {
-        maxWidth: 80,
+        maxWidth: "auto",
     },
     fullList: {
         width: 'auto',
@@ -40,7 +44,7 @@ export default function Burger() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['якась хуйня', 'ше якась', 'ше якась'].map((text, index) => (
+                {['незабаром!', 'незабаром!', 'незабаром!'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemText primary={text} />
                     </ListItem>
@@ -54,7 +58,7 @@ export default function Burger() {
             zIndex: "999"}}>
             {['Меню'].map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+                    <Button onClick={toggleDrawer(anchor, true)}><img src={burger} alt={"menu"} /></Button>
                     <SwipeableDrawer
                         anchor={anchor}
                         open={state[anchor]}
