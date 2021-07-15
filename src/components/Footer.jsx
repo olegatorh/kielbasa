@@ -10,7 +10,7 @@ import mailBox from "../media/mailbox.png"
 const useStyles = makeStyles((theme) => ({
     footer: {
         color: "white",
-        backgroundColor: "black"
+        backgroundColor: "black",
     },
     GreenText: {
         backgroundColor: "#73a640",
@@ -58,15 +58,15 @@ function Footer() {
     return (
         <Grid container direction={"column"} className={classes.footer}>
 
-            <Grid container>
+            <Grid container >
                 <Grid item xs className={classes.GreenText}>
                     <Typography align={"center"} variant={"h6"}>
                         <strong> НАША ПРОДУКЦІЯ СМАЧНА, АПЕТИТНА І ЦІЛКОМ БЕЗПЕЧНА ДЛЯ СПОЖИВАННЯ!</strong>
                     </Typography>
                 </Grid>
-                <Grid container direction={matches ? "column" : "row"} justifyContent="center" alignItems="center">
+                <Grid container direction={matches ? "column" : "row"} justifyContent="center" alignItems="center" style={{padding: "10px"}}>
                     <Grid item xs className={classes.MainBlackText}>
-                        <Typography align={"center"} variant="h4">
+                        <Typography align={"center"} variant="h5">
                             МИ ЗНАХОДИМОСЬ
                         </Typography>
                     </Grid>
@@ -86,7 +86,7 @@ function Footer() {
             </Grid>
 
 
-            <Grid container direction={matches ? "column" : "row"}>
+            <Grid container direction={matches ? "column" : "row"} style={{padding: "10px"}}>
                 <Grid item xs className={classes.FooterIcons}>
                     <Typography align={"left"}>
                         <a target="_blank" title="Натисніть щоб знайти на карті!"
