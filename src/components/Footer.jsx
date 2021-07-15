@@ -49,7 +49,7 @@ function Footer() {
                         <strong> НАША ПРОДУКЦІЯ СМАЧНА, АПЕТИТНА І ЦІЛКОМ БЕЗПЕЧНА ДЛЯ СПОЖИВАННЯ!</strong>
                     </Typography>
                 </Grid>
-                <Grid container style={{padding: "20px", backgroundColor: "black"}} direction="row"
+                <Grid container style={{padding: "20px", backgroundColor: "black"}}  direction={matches ? "column" : "row"}
                       justifyContent="center" alignItems="center">
                     <Grid item xs>
                         <Typography align={"center"} variant="h4">

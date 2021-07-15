@@ -1,4 +1,4 @@
-import {Grid, makeStyles, Typography} from "@material-ui/core";
+import {Grid, makeStyles, Typography, useMediaQuery, useTheme} from "@material-ui/core";
 
 import AboutUsFirst from "../media/AboutUsFirst.png"
 import AboutUsSecond from "../media/AboutUsSecond.png"
@@ -47,11 +47,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AboutUs() {
     const classes = useStyles()
+    const theme = useTheme()
+    const matches = useMediaQuery(theme.breakpoints.down("xs"))
 
     return (
         <Grid container className={classes.AboutUs}>
 
-            <Grid container className={classes.AboutUsMedia} direction="row" justifyContent="center"
+            <Grid container className={classes.AboutUsMedia} direction={matches ? "column" : "row"} justifyContent="center"
                   alignItems="center">
                 <Grid item xs style={{
                     display: "flex",
@@ -93,7 +95,7 @@ export default function AboutUs() {
                 </Grid>
             </Grid>
 
-            <Grid container direction="row" justifyContent="center" alignItems="center">
+            <Grid container  direction={matches ? "column" : "row"}  justifyContent="center" alignItems="center">
                 <Grid item xs style={{
                     display: "flex",
                     alignItems: "center",
