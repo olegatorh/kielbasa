@@ -12,29 +12,6 @@ const useStyles = makeStyles((theme) => ({
         color: "white",
         backgroundColor: "black",
     },
-    GreenText: {
-        backgroundColor: "#73a640",
-        padding: "3px",
-    },
-    MainBlackText: {
-        padding: "20px",
-        [theme.breakpoints.down("xs")]: {
-            marginBottom: "10px",
-        }
-    },
-    SecondBlackText: {
-        padding: "20px",
-        borderLeft: "2px solid white",
-        [theme.breakpoints.down("xs")]: {
-            borderLeft: "none",
-        }
-    },
-    FooterImage: {
-        objectFit: "fill",
-        width: "100%",
-        height: "auto",
-        maxHeight: "400px"
-    },
     FooterIcons: {
         display: "flex",
         flexDirection: "row",
@@ -57,35 +34,6 @@ function Footer() {
 
     return (
         <Grid container direction={"column"} className={classes.footer}>
-
-            <Grid container >
-                <Grid item xs className={classes.GreenText}>
-                    <Typography align={"center"} variant={"h6"}>
-                        <strong> НАША ПРОДУКЦІЯ СМАЧНА, АПЕТИТНА І ЦІЛКОМ БЕЗПЕЧНА ДЛЯ СПОЖИВАННЯ!</strong>
-                    </Typography>
-                </Grid>
-                <Grid container direction={matches ? "column" : "row"} justifyContent="center" alignItems="center" style={{padding: "10px"}}>
-                    <Grid item xs className={classes.MainBlackText}>
-                        <Typography align={"center"} variant="h5">
-                            МИ ЗНАХОДИМОСЬ
-                        </Typography>
-                    </Grid>
-                    <Grid item xs className={classes.SecondBlackText}>
-                        <Typography align={"center"}>
-                            У підніжжі прикарпатських гір та річок,<br/>
-                            неподалік курортного м. Трускавець та поруч із м. Другобич,<br/>
-                            знаходиться тихе, чарівне село Раневичі,<br/>
-                            в якому і функціонує наше підприємство «РАНЕВИЦЬКІ КОВБАСИ»<br/>
-                        </Typography>
-                    </Grid>
-                </Grid>
-            </Grid>
-
-            <Grid item xs>
-                <img src={footer} alt="" className={classes.FooterImage}/>
-            </Grid>
-
-
             <Grid container direction={matches ? "column" : "row"} style={{padding: "10px"}}>
                 <Grid item xs className={classes.FooterIcons}>
                     <Typography align={"left"}>
@@ -121,22 +69,6 @@ function Footer() {
                     </Typography>
                 </Grid>
             </Grid>
-
-
-            <Grid item xs style={{backgroundColor: "#73a640",}}>
-                <iframe title={"our location"}
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2601.71728322973!2d23.43081801569005!3d49.30069847933321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473a4a369e2e3901%3A0x49cf3f4d6b4def74!2z0LLRg9C70LjRhtGPINCU0YDQvtCz0L7QsdC40YbRjNC60LAsIDUyLCDQkdC-0YDQuNGB0LvQsNCyLCDQm9GM0LLRltCy0YHRjNC60LAg0L7QsdC70LDRgdGC0YwsIDgyMzAw!5e0!3m2!1suk!2sua!4v1626203332716!5m2!1suk!2sua"
-                        width="100%" height="400" allowFullScreen="" loading="lazy"/>
-            </Grid>
-
-            <Grid item xs style={{
-                backgroundColor: "#73a640",
-            }}>
-                <Typography align={"center"} variant={"h6"}>
-                    <strong>НАШЕ РОЗТАШУВАННЯ НА КАРТАХ!</strong>
-                </Typography>
-            </Grid>
-
         </Grid>
 
     )
