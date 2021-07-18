@@ -1,14 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 
 
 import burger from "../../media/menu.png"
+import {Link} from "react-router-dom";
 
 
 const useStyles = makeStyles({
@@ -31,7 +31,7 @@ export default function Burger() {
             return;
         }
 
-        setState({ ...state, [anchor]: open });
+        setState({...state, [anchor]: open});
     };
 
     const list = (anchor) => (
@@ -44,21 +44,25 @@ export default function Burger() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['незабаром!', 'незабаром!', 'незабаром!'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <ListItem button>
+
+                    <Link to={'Продукція'}>Продукція</Link>
+                </ListItem>
             </List>
         </div>
     );
 
+
+    const oba = window.location.href
+    console.log(oba)
     return (
-        <div style={{   position: "fixed",
-            zIndex: "999"}}>
+        <div style={{
+            position: "fixed",
+            zIndex: "999"
+        }}>
             {['Меню'].map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)}><img src={burger} alt={"menu"} /></Button>
+                    <Button onClick={toggleDrawer(anchor, true)}><img src={burger} alt={"menu"}/></Button>
                     <SwipeableDrawer
                         anchor={anchor}
                         open={state[anchor]}
