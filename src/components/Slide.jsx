@@ -23,7 +23,6 @@ const useStyles = makeStyles({
 
 export default function Slider() {
     const classes = useStyles();
-
     return (
         <>
                 <div className={classes.logo}  >

@@ -46,7 +46,7 @@ export default function Burger() {
             <List>
                 <ListItem button>
 
-                    <Link to={'Продукція'}>Продукція</Link>
+                    <Link to={'ProductPage'}>Продукція</Link>
                 </ListItem>
             </List>
         </div>
