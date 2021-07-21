@@ -1,33 +1,45 @@
 import Footer from "../Footer";
-import {Container, Grid, makeStyles, Typography} from "@material-ui/core";
+import {Container} from "@material-ui/core";
 import Burger from "../newNav/NavBar";
 import Slider from "../Slide";
 import {AboutProduct} from "./AboutProduct";
 import {AboutProductSecond} from "./AboutProductSecond";
 
+import {CategoryList} from "./СategoryList";
+import {useState} from "react";
 import {ProductList} from "./ProductList";
-import {CategoryList} from "./categoryList";
-import {useCallback, useState} from "react";
 
 
+import {content, data} from "../../State/State";
 
-export const ProductPage = (props) => {
-    const [count, setCount] = useState(0);
+export const ProductPage = () => {
+    const [state, setState] = useState("CategoryList")
 
-    const callback = useCallback((count) => {
-        setCount(count);
-    }, []);
+    const updateData = (value) => {
+        setState(value)
+    }
 
-    console.log(count)
+    function renderSwitch(state, data) {
+        return data.map(item => {
+            switch (state) {
+                case item:
+                    return <ProductList updateData={updateData} data={state} content={content[item]}/>
+                case "CategoryList":
+                    return <CategoryList updateData={updateData} data={data}/>
+            }
+        })
+    }
+
 
     return (
         <Container maxWidth={"lg"}>
             <Burger/>
             <Slider/>
             <AboutProduct/>
-            <CategoryList callBack={callback}/>
+            {renderSwitch(state, data)}
             <AboutProductSecond/>
             <Footer/>
         </Container>
     )
 }
+

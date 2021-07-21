@@ -6,12 +6,20 @@ import {AboutUsSecond} from "./AboutUsSecond";
 import {Container} from "@material-ui/core";
 import {Map} from "./Map";
 import {WhereWeAre} from "./WhereWeAre";
+import {makeStyles} from "@material-ui/core/styles";
+
+
+const useStyles = makeStyles((theme) => ({
+    Main:{
+        maxWidth: "1580px"
+    }
+}))
 
 
 function MainPage() {
-
+const classes = useStyles()
     return (
-        <Container maxWidth={"lg"}>
+        <Container className={classes.Main}>
             <Burger/>
             <Slider/>
             <AboutUs/>

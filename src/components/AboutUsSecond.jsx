@@ -44,7 +44,7 @@ export const AboutUsSecond = () => {
                 <Grid item xs>
                     <Paper className={classes.paper}>Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</Paper>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs>
                     <Paper className={classes.paper}>sum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).6</Paper>
                 </Grid>
                 <Grid item xs>

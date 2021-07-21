@@ -1,7 +1,6 @@
 import {Grid, makeStyles} from "@material-ui/core";
+import CategoryCard from "./CategoryCard";
 import backGround from "../../media/background.png";
-import React from "react";
-import ProductCard from "./ProductCard";
 
 
 const useStyles = makeStyles((styles) => ({
@@ -15,13 +14,16 @@ const useStyles = makeStyles((styles) => ({
     },
 }))
 
-export const ProductList = (props) => {
+export const CategoryList = (props) => {
     const classes = useStyles()
+
     return(
         <section className={classes.Content}>
-        <Grid container direction="row" justify={"space-around"}>
-            {props.content.map(item => <ProductCard content={item}/>)}
-        </Grid>
+            <Grid container direction="row" justify={"space-around"}>
+                {props.data.map(data => <Grid item className={classes.ProductCard}>
+                    <CategoryCard item={data} updateData={props.updateData}/>
+                </Grid>)}
+            </Grid>
         </section>
     )
 }
