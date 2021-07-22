@@ -18,6 +18,12 @@ const useStyles = makeStyles({
     fullList: {
         width: 'auto',
     },
+    Page: {
+        '& a': {
+            color: "black",
+            textDecoration: "none"
+        }
+    }
 });
 
 export default function Burger() {
@@ -44,17 +50,14 @@ export default function Burger() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                <ListItem button>
-
-                    <Link to={'ProductPage'}>Продукція</Link>
+                <ListItem button className={classes.Page}>
+                    {window.location.pathname === "/ProductPage"
+                        ? <Link to={'/'}>Головна</Link>
+                        : <Link to={'ProductPage'}>Продукція</Link>}
                 </ListItem>
             </List>
         </div>
     );
-
-
-    const oba = window.location.href
-    console.log(oba)
     return (
         <div style={{
             position: "fixed",

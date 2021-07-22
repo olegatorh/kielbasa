@@ -1,5 +1,5 @@
 import Footer from "../Footer";
-import {Container} from "@material-ui/core";
+import {Container, Grid, makeStyles} from "@material-ui/core";
 import Burger from "../newNav/NavBar";
 import Slider from "../Slide";
 import {AboutProduct} from "./AboutProduct";
@@ -11,10 +11,20 @@ import {ProductList} from "./ProductList";
 
 
 import {content, data} from "../../State/State";
+import backGround from "../../media/background.png";
+
+
+const useStyles = makeStyles((styles) => ({
+    Content: {
+        backgroundImage: `url(${backGround})`,
+        marginBottom: "20px"
+    },
+}))
+
 
 export const ProductPage = () => {
+    const classes = useStyles()
     const [state, setState] = useState("CategoryList")
-
     const updateData = (value) => {
         setState(value)
     }
@@ -25,18 +35,21 @@ export const ProductPage = () => {
                 case item:
                     return <ProductList updateData={updateData} data={state} content={content[item]}/>
                 case "CategoryList":
-                    return <CategoryList updateData={updateData} data={data}/>
+                    return <CategoryList updateData={updateData} data={item}/>
             }
         })
     }
-
 
     return (
         <Container maxWidth={"lg"}>
             <Burger/>
             <Slider/>
             <AboutProduct/>
-            {renderSwitch(state, data)}
+            <section className={classes.Content}>
+                <Grid container direction="row" justify={"space-around"}>
+                    {renderSwitch(state, data)}
+                </Grid>
+            </section>
             <AboutProductSecond/>
             <Footer/>
         </Container>

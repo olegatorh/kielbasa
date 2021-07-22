@@ -16,14 +16,9 @@ const useStyles = makeStyles((styles) => ({
 
 export const CategoryList = (props) => {
     const classes = useStyles()
-
-    return(
-        <section className={classes.Content}>
-            <Grid container direction="row" justify={"space-around"}>
-                {props.data.map(data => <Grid item className={classes.ProductCard}>
-                    <CategoryCard item={data} updateData={props.updateData}/>
-                </Grid>)}
-            </Grid>
-        </section>
+    return (
+        <Grid item className={classes.ProductCard}>
+            <CategoryCard item={props.data} updateData={props.updateData}/>
+        </Grid>
     )
 }
